@@ -14,7 +14,7 @@ def clear_chat_history():
 st.sidebar.button('清空聊天记录', on_click=clear_chat_history)
 
 
-if (prompt := st.chat_input()) or (prompt := text):
+if (prompt := st.chat_input()):
     st.session_state.messages.append({"role": "user", "content": prompt})
     st.chat_message("user").write(prompt)
     response = main(prompt)
